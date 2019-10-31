@@ -1,0 +1,31 @@
+{
+  "name": "myapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"webpack --watch\" \"nodemon ./bin/www\"  ",
+    "devstart": "webpack --config webpack.config.js",
+    "nodemonstart": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.6",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.19.4",
+    "nodemon-webpack-plugin": "^4.1.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}

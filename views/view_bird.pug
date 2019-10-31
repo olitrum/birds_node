@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+    each bird in list_birds
+      li 
+        #{bird.name} 
+
+    else
+      li There are no birds.
