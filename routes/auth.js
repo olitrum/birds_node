@@ -31,7 +31,6 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/login', async function (req, res) {
-  
   var user = await Users.findOne({login: req.body.login});
   if (!user) return res.status(400).send('Wrong login');
   if (req.body.password == user.password){
@@ -41,10 +40,7 @@ router.post('/login', async function (req, res) {
       isAdmin: user.isAdmin    
     }
     var token = jwt.sign(userForToken, 'secret');
-    //res.header('auth-token', token);.send(token);
-    //res.cookie('token', token);
-    //res.redirect('/');
-    console.log(user.login);
+    res.header('auth-token', token).send();
   }
   else{
     return res.status(400).send('Wrong pass');
