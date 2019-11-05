@@ -1,7 +1,7 @@
 var Birds = require('../models/birds');
 var express = require('express');
 var router = express.Router();
-var verify = require('../helpers/verifyToken');
+var verify = require('../middlewares/verifyToken');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
