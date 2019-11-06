@@ -23,10 +23,9 @@ submitLogin = function() {
 }
 
 addBird = function() {
-  var userToken = auth
-  console.log(userToken);
-  axios.defaults.headers.common['Authorization'] = userToken;
-  axios.get('http://localhost:5000/add_bird');
+  var userToken = authHelper.getToken();
+  alert(userToken);
+  apiHelper.api.get('add_bird');
 }
 
 
