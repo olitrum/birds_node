@@ -40,7 +40,8 @@ router.post('/login', async function (req, res) {
       isAdmin: user.isAdmin    
     }
     var token = jwt.sign(userForToken, 'secret');
-    res.header('Authorization', token).send();
+
+    res.send(token);
   }
   else{
     return res.status(400).send('Wrong pass');

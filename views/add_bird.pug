@@ -1,37 +1,6 @@
-extends layout
- 
-  form(method='POST' action='')
-    div.form-group
-      label(for='name') Name:
-      input#first_name.form-control(type='text' name='name' value: Birds.name)
-    div
-      label(for='kingdom') Kingdom:
-      input#first_name.form-control(type='text' name='kingdom' value: Birds.kingdom)
-    div
-      label(for='phylum') Phylum:
-      input#first_name.form-control(type='text' name='phylum' value: Birds.phylum)
-    div
-      label(for='class') Class:
-      input#first_name.form-control(type='text' name='class' value: Birds.class)
-    div
-      label(for='order') Order:
-      input#first_name.form-control(type='text' name='order' value: Birds.order)
-    div
-      label(for='family') Family:
-      input#first_name.form-control(type='text' name='family' value: Birds.family)
-    div
-      label(for='genus') Genus:
-      input#first_name.form-control(type='text' name='genus' value: Birds.genus)
-    div
-      label(for='conservation') Conservation:
-      input#first_name.form-control(type='text' name='conservation' value: Birds.conservation)
-    div
-      label(for='image') Image:
-      input#first_name.form-control(type='text' name='image' value: Birds.image)
-    div
-    button.btn.btn-primary(type='submit') Submit
-  if errors 
-    ul
-      for error in errors
-        li!= error.msg
-  
+doctype html
+html
+  head
+    title my jade template
+  body
+    h1 Hello

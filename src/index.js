@@ -12,9 +12,9 @@ submitLogin = function() {
     password: _password
   })
   .then(function (response) {
-    var token = response.headers['Authorization'];
-    alert(token);
-    authHelper.setToken(token);
+    var token1 = response.data;
+    alert(token1);
+    authHelper.setToken(token1);
   })
   .catch(function (error) {
     alert(error);
@@ -25,7 +25,21 @@ submitLogin = function() {
 addBird = function() {
   var userToken = authHelper.getToken();
   alert(userToken);
-  apiHelper.api.get('add_bird');
+
+  apiHelper.api.get('http://localhost:5000/add_bird', {
+    headers: {
+      'Authorization': userToken
+    },
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });  
 }
 
 
