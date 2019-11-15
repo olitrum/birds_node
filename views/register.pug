@@ -1,18 +1,13 @@
 extends layout
-
 block content
-  h1=title
-
-  form(method='POST' action='')
-    div.form-group
-      label(for='login') Login:
-      input#first_name.form-control(type='text' name='login')
+  title Sign in
+  form()
     div
-      label(for='password') Password:
-      input#first_name.form-control(type='text' name='password')
-    button.btn.btn-primary(type='submit') Submit
-  if errors 
-    ul
-      for error in errors
-        li!= error.msg
+    label(for='login') Login:
+    input#login(type='text' name='login')
+    div
+    label(for='password') Password:
+    input#password(type='text' name='password')
+    button(type='submit' onClick='submitRegister()') Submit
+  script(src='/main.js')
  

@@ -12,12 +12,60 @@ submitLogin = function() {
     password: _password
   })
   .then(function (response) {
-    var token1 = response.data;
-    alert(token1);
-    authHelper.setToken(token1);
+    var token = response.data;
+    alert(token);
+    authHelper.setToken(token);
   })
   .catch(function (error) {
-    alert(error);
+    console.log(error);
+  });
+
+}
+
+submitBird = function() {
+  var _name = document.getElementById('name').value;
+  var _kingdom = document.getElementById('kingdom').value;
+  var _phylum = document.getElementById('phylum').value;
+  var _class = document.getElementById('class').value;
+  var _order = document.getElementById('order').value;
+  var _family = document.getElementById('family').value;
+  var _genus = document.getElementById('genus').value;
+  var _conservation = document.getElementById('conservation').value;
+  var _image = document.getElementById('image').value;
+ 
+  apiHelper.api.post('add_bird', {
+    name: _name,
+    kingdom: _kingdom,
+    phylum: _phylum,
+    class: _class,
+    order: _order,
+    family: _family,
+    genus: _genus,
+    conservation: _conservation,
+    image: _image
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+}
+
+submitRegister = function() {
+  var _login = document.getElementById('login').value;
+  var _password = document.getElementById('password').value;
+
+  apiHelper.api.post('auth/register', {
+    login: _login,
+    password: _password
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
   });
 
 }
@@ -25,8 +73,7 @@ submitLogin = function() {
 addBird = function() {
   var userToken = authHelper.getToken();
   alert(userToken);
-
-  apiHelper.api.get('http://localhost:5000/add_bird', {
+  apiHelper.api.get('add_bird', {
     headers: {
       'Authorization': userToken
     },
@@ -41,5 +88,7 @@ addBird = function() {
     // always executed
   });  
 }
+
+
 
 
