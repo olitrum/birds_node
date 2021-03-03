@@ -18,7 +18,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.6",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11"
+    "pug": "3.0.1"
   },
   "devDependencies": {
     "html-loader": "^0.5.5",
